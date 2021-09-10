@@ -1,0 +1,36 @@
+#Question 1
+favcolors = ["orange", "red", "blue-grey", "green"] #list of my favorite colors
+print(type(favcolors))
+print(favcolors)
+
+#Question 2
+nums = list(range(30, 60, 3)) #generating list of numbers 
+print(nums)
+numbs=(30, 33, 36, 39, 42, 45, 48, 51, 54, 57) #tupling the list of numbers
+print(type(numbs))
+print(numbs)
+
+#Question 3
+integ = list() #setting up my empty integer list 
+integ.append(0) #appending 0-5 
+integ.append(1)
+integ.append(2)
+integ.append(3)
+integ.append(4)
+integ.append(5)
+print(integ) #printing new list
+integ.remove(2) #removing item 2 
+print(integ) #reprinting list
+integ.insert(2, 2.0) #reinserting 2.0 whwere 2 was
+print(integ)
+#printing length min and max of the list 
+print(len(integ)) 
+print(max(integ))
+print(min(integ))
+
+#Question 4 
+newnums = list(range(1, 11, 1)) #creating list from 1-10
+print(newnums)
+sum(newnums) #getting sum of list
+
+
