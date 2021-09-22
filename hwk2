@@ -1,0 +1,60 @@
+#Question 1 
+n=0 #initializing n
+while n<10:   #creating while loop
+    print(n)
+    if n == 4:
+        break
+    n = n+1
+    
+#Question 2 
+n=0  #Initizaling n 
+while n<5: #creating while loop
+    print(n)
+    n +=1
+else:      #creating condition to print n isn't less than 5
+    print ("n is not less than 5")
+    
+#Question 3 
+fruits = ["figs", "pomagranite", "watermelon", "apples"] #creating list 
+for fruit in fruits: #creating for loop 
+    if fruit == "apples": 
+        print("I dont like apples") #apple condition
+    else:
+        print("i like", fruit) #the rest of our fruits 
+#Question 4 
+n = 30 
+sum = 0 
+i = 1 
+while i <= n: #creating while loop to sum 1-30
+    sum  = sum + i 
+    i = i+1
+print ("the sum is", sum)
+
+#Question 5
+weather = {"sunny": "play", "rainy": "watch TV", "cloudy": "walk"} #creating dictionary
+for key, value in weather.items(): #creating for loop for dictionary 
+    print(f'when {key} let us {value}')
+weather.update ({"snowy":"ski"}) #updating dictionary 
+print(weather)
+
+#Question 6
+weather = {"sunny": "play", "rainy": "watch TV", "cloudy": "walk"}
+for key, value in weather.items():    #if..else loop for weather 
+    if key == "sunny":
+        print('When sunny let us play')
+    elif key == "rainy":
+        print('When rainy let us watch tv')
+    elif key == "cloudy":
+        print('When cloudy let us walk') 
+#Question 7
+grade = 55 #initializig grade 
+if grade >= 90: #creating if elif loop for grading scale 
+    print('A')
+elif grade >= 80:
+    print('B')
+elif grade >= 70:
+    print('C')
+elif grade >= 60:
+    print('D')
+else:
+    print('F')
