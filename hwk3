@@ -1,0 +1,118 @@
+#Xenia Evangeloulis stat1129 HWK3
+#Question 0 
+#making dictionary
+marks = {'Andy':88, 'Amy':66, 'James': 90, 'Jules': 55, 'Arthur': 77}
+for key, value in marks.items(): #question 1 creating for loop
+    print(f'student: {key}   grade: {value}')
+    
+#QUESTION 2
+def maximum (value1, value2, value3, value4, value5):
+    #return the max val of the list
+    max_value = value1
+    if value2 > max_value:
+        max_value = value2
+    if value3 > max_value:
+        max_value = value3
+    if value4 > max_value:
+        max_value = value4
+    if value5 > max_value:
+        max_value = value5
+    return max_value
+maximum(88, 66, 90, 55, 77) #calling the function 
+
+#Question 2
+def minimum (value1, value2, value3, value4, value5):
+   #return the min val of the the list
+    min_value = value1
+    if value2 < min_value:
+        min_value = value2
+    if value3 < min_value:
+        min_value = value3
+    if value4 < min_value:
+        min_value = value4
+    if value5 < min_value:
+        min_value = value5
+    return min_value
+minimum(88, 66, 90, 55, 77) #calling function
+#question 2
+def mean (value1, value2, value3, value4, value5):
+    #return the mean of the list
+    mean_value = (value1 + value2 + value3 + value4 + value5)/5 
+    return mean_value
+mean(88, 66, 90, 55, 77) #calling the function
+
+#QUESTION 3
+marks = {'Andy':88, 'Amy':66, 'James': 90, 'Jules': 55, 'Arthur': 77}
+for key, value in marks.items(): #creating for loop
+    if key == "James":
+      break   
+    else: 
+        print(f'student: {key}   grade: {value}')
+        
+#QUESTION 4
+marks = {'Andy':88, 'Amy':66, 'James': 90, 'Jules': 55, 'Arthur': 77}
+for key, value in marks.items(): #creating for loop
+    if key == "James":
+      continue
+    if key == "Jules":
+      continue 
+    else: 
+        print(f'student: {key}   grade: {value}')
+
+#QUESTION 5
+def print_student(student_name):
+    #printing indiv studets grades when called
+    marks = {'Andy':88, 'Amy':66, 'James': 90, 'Jules': 55, 'Arthur': 77}
+    for student in marks: 
+        if student == student_name:
+            print(marks[student])
+            break 
+        else:
+            print("no student with that name")
+print_student("Jules") #calling name
+
+#QUESTION 6
+def less_than(num):
+    #lists numbers squared till num is greater than called number
+    n = 1
+    while n < num:
+        n=n+1
+        print (n**n)
+    else:
+        print ("greater than", num)
+
+less_than(8) #calling function
+
+#QUESTION 7
+def sumfunct(num):
+    #return summed number
+    n = 1
+    sum = 0
+    while n<= num: 
+        sum = sum + n
+        n = n + 1
+    print(sum)
+sumfunct(9) #calling number
+
+#QUESTION 9
+def sumfun(num):
+    #return sum of function w/ each sum printed
+    sum = 0 
+    for n in range(num):
+        sum = sum + n 
+        print (sum)
+        
+sumfun(8) #calling num
+#Question 10 
+def minimum(v1, v2, v3, v4):
+    #return minimum of four arguemtns 
+    min_value = v1
+    if v2 < min_value:
+        min_value = v2
+    if v3 < min_value:
+        min_value = v3
+    if v4 < min_value:
+        min_value = v4
+    return min_value
+
+minimum(37, 55, 6, 17) #calling minimum 
