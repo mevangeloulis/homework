@@ -1,0 +1,55 @@
+#Question 1
+import numpy as np 
+numbers = np.array([1, 2, 3, 4 , 5, 6, 7, 8, 9, 10, 11, 12]) #creating array
+type(numbers)
+numbers
+np.arange(1, 13).reshape(3, 4) #reshaping to be a 4X3 matrix
+
+import numpy as np 
+numbers = np.array([[ 1,  2,  3,  4],
+                   [ 5,  6,  7,  8],
+                   [ 9, 10, 11, 12]])
+numbers*2 #multiplying orig array by 2 
+
+#Question 2 
+import numpy as np
+integers = np.array([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]])
+for row in integers:     #Nested for loop to print thru array 
+    for column in row:
+        print(column, end='  ')
+    print()
+
+#Question 2
+#printing same array using flat method 
+for i in numbers.flat: 
+    print (i, end='')
+    
+#Question 3 
+import matplotlib.pyplot as plt
+import numpy as np
+
+xpoints = np.array([1, 6]) #creating x int array
+ypoints = np.array([5, 10]) #creating y int array
+
+plt.plot(xpoints, ypoints) #plotting it as a line 
+plt.show()
+
+#Question 4 
+import matplotlib.pyplot as plt
+import numpy as np
+
+xpoints = np.array([3, 6, 9, 12]) #creating x values of our points
+ypoints = np.array([2, 8, 1, 10]) #creating y values of our points
+
+plt.plot(xpoints, ypoints) #printing them out as line on plot 
+plt.show()
+
+#Question 5 
+import matplotlib.pyplot as plt
+import numpy as np
+
+xpoints = np.array([0, 1, 2, 3, 4, 5]) #creating x values of our points
+ypoints = np.array([2, 4, 6, 14, 10, 12]) #creating y values of our points
+#printing them out as red dotted line w/ green dimonds on plot
+plt.plot(xpoints, ypoints, ':r', marker = 'D', ms = 10, mec = 'g', mfc = 'g')
+plt.show()
