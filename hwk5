@@ -1,0 +1,106 @@
+#Question 1 
+import matplotlib.pyplot as plt
+import numpy as np
+
+x1 = np.array([0.0, 4.0])
+y1 = np.array([0, 4]) #creating y1 int array
+y2 = np.array([5, 9]) #creating y2 int array
+y3 = np.array([9, 13]) #creating y3 int array
+
+plt.plot(x1, y1, linewidth = '2')  
+plt.plot(x1, y2, linewidth = '2') 
+plt.plot(x1, y3, linewidth = '2') 
+
+plt.show()
+
+#Question 2
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.random.normal(0, 0.2, 800)  #making histogram conditions 
+
+plt.hist(x)
+plt.show() #plotting normal histogram 
+
+#Question 3 
+mydic = {"Apples": 45, "Bananas":25, "Cherries":15, "Dates":20}
+import matplotlib.pyplot as plt
+import numpy as np
+
+#print fruits and vals 
+print(mydic.keys())
+print(mydic.values())       
+#I have no clue what the append part of this question would look like. I tried many different things and looked thru
+    #all of our slides and the recording, it did not help so I gave up. An example or something would be great.  
+
+#pie chart
+y = np.array([45, 25, 15, 20])
+mylabels = ["Apples", "Bananas", "Cherries", "Dates"]
+myexplode = [0.2, 0.2, 0.2, 0.2]
+
+plt.pie(y, labels = mylabels, explode = myexplode)
+plt.legend()
+plt.show()
+
+#bar chart
+x = np.array(["Apples", "Bannanas", "Cherries", "Dates"])
+y = np.array([45, 25, 15, 20])
+
+plt.bar(x,y)
+plt.show()
+
+#Question 4 
+import matplotlib.pyplot as plt
+import numpy as np
+marks_range = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100] # this is x-axis values
+
+math_marks = [88, 92, 80, 89, 90, 80, 60, 88, 80, 84] # this is the math marks
+plt.scatter(marks_range, math_marks, color = 'hotpink')
+science_marks = [75, 59, 69, 48, 65, 56, 32, 45, 20, 30] # this is the science marks
+plt.scatter(marks_range, science_marks, color = 'green')
+plt.title("Math V.S. Science Scores Scatter Plot")  #adding titles, labels and legend 
+plt.xlabel("Marks Range")
+plt.ylabel("Marks Scored")
+plt.legend(["Math" , "Science"])
+
+plt.show()
+
+#Question 5
+import matplotlib.pyplot as plt
+import numpy as np
+
+#plot 1: Scatter plot 
+x = np.array([5,12, 16, 19, 22, 30, 69]) #making x values for points
+y = np.array([4, 9, 27, 24, 0, 13, 17])  #making y values for points
+
+plt.subplot(2, 2, 1)   #plots position in subplot 
+plt.scatter(x, y, color = "red")  
+plt.title("SCATTER PLOT")  #adding title 
+
+#plot 2: mult line plot 
+x1 = np.array([0.0, 4.0])
+y1 = np.array([2, 7]) #creating first y int array
+y2 = np.array([5, 9]) #creating second y int array
+
+plt.subplot(2, 2, 2)   #plots position in subplot 
+plt.plot(x1, y1, linewidth = '2')
+plt.plot(x1, y2, linewidth = '2')
+plt.title("MULTIPLE LINE PLOT")
+
+#plot 3: bar chart
+x = np.array(["A", "B", "C", "D"])
+y = np.array([9, 32, 17, 25]) 
+
+plt.subplot(2, 2, 3)  #plots position in subplot 
+plt.bar(x,y)
+plt.title("BAR CHART")
+
+#plot 4: pie chart 
+y = np.array([34, 29, 7 ,12]) #creating pie chart
+
+plt.subplot(2, 2, 4)  #plots position in subplot 
+plt.pie(y)
+plt.title("PIE CHART") 
+
+plt.suptitle("MY PLOTS")
+plt.show()
