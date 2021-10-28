@@ -1,0 +1,75 @@
+#question 1
+numlist = [2,4,6,8,4,5,2,1,9,0,4,6,7,4,3,2,1,9,10,3,7,9,6,0,1,3,5,6,7,8,9,10,2,3,6,8,9,10,6,7,4,3]
+frequency = {}
+
+# iterating over the list
+for item in numlist:
+   # checking the element in dictionary
+   if item in frequency:
+      # incrementing the counr
+      frequency[item] += 1
+   else:
+      # initializing the count
+      frequency[item] = 1
+
+# printing the frequency
+print(frequency)
+
+import matplotlib.pyplot as plt
+import numpy as np
+#creating histogram of number frequency 
+x = np.array(["0", "1", "2", "3", "4", "5","6", "7", "8", "9", "10"])
+y = np.array([2, 3, 4, 5, 5, 2, 6, 4, 3, 5, 3])
+plt.title("Frequency of Number in List")
+plt.bar(x,y)
+plt.show()
+
+import json
+
+numlist = {2: 4, 4: 5, 6: 6, 8: 3, 5: 2, 1: 3, 9: 5, 0: 2, 7: 4, 3: 5, 10: 3} #creating number frequency dictionary
+#storing dictionary as json 
+with open('data.json', 'w') as fp:
+    json.dump(numlist, fp)
+
+with open('data.json', 'r') as fp:
+    data = json.load(fp)
+
+print(data)
+print(type(data))
+
+#Question 2 
+import pandas as pd #importing panda 
+
+df = pd.read_csv('amazon.csv') #opening my data
+df.shape #printing the size, by column and row, of the file 
+
+df.head() #pritning the first 5 lines of the data file  
+
+df = df.fillna(0) #cleaning the data of any missing values
+df.head()
+
+df["Item Total"] = df["Item Total"].str.replace('$','').astype(float) 
+    #removing the $ from order total so we can continue
+df.head()    
+df["Item Total"].sum()  #finding the sum of all the orders
+df["Item Total"].max() #finding the max price out of all the orders
+df["Item Total"].min() #finding the min price out of all the orders
+df["Item Total"].mean()  #finding the mean price out of all the orders
+
+df["Item Subtotal Tax"] = df["Item Subtotal Tax"].str.replace('$','').astype(float)  
+    #removing the $ from our item tax variable so we can continue
+df.head()
+df["Item Subtotal Tax"].sum() #finding the sum of teh tax on all orders 
+df["Item Subtotal Tax"].sum()/df["Item Total"].sum()  #finding the tax rate for our orders
+
+df['Order Date'] = pd.to_datetime(df['Order Date'])
+df.head()
+%matplotlib inline
+df.plot.bar(x='Order Date', y='Item Total', rot=90, figsize=(20,10))   
+     #plotting a histogram of each purchase and it's price 
+     
+daily_orders = df.groupby('Order Date').sum()["Item Total"]
+daily_orders.head()
+
+daily_orders.plot.bar(figsize=(20,10)) 
+#plotting a histogram of each purchase and it's price but purchases on same date are grouped together
