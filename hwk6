@@ -1,0 +1,36 @@
+#QUESTION 1 
+#creating both matricies
+a <- matrix(c(7, 9 ,12, 2, 4, 13), 
+            ncol=3, nrow=2,  byrow=TRUE )
+a 
+b <- matrix(c(1, 7, 12, 19, 2, 8, 13, 20,3, 9, 14, 21), 
+            ncol = 3, nrow= 3, byrow=TRUE )
+b
+#Multiplying the matricies
+a%*%b
+
+#QUESTION 2
+#opening amazon data
+am = read.csv("amazon.csv")
+View(am)
+
+table(am$Item.Total)
+table(am$Order.Date)
+
+#remove dollar signs and commas from sales column
+am$Item.Total = as.numeric(gsub("[\\$]", "", am$Item.Total))
+am
+#Finding out diff stats about the price of our purchases 
+summary(am$Item.Total)
+sd(am$Item.Total)
+
+#Plotting stuff
+#Boxplot
+boxplot(am$Item.Total, main= "Boxplot for Item Costs", ylab= "Price")
+#histogram 
+hist(am$Item.Total)
+
+vartable <- table(am$Item.Total)
+barplot(vartable, main= "Cost of Amazon Purchases", xlab= "Item Total", ylab= "Frequency of Cost")
+
+boxplot(split(am$Item.Total, am$Order.Date),main='Cost and Order Date')
