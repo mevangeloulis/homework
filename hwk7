@@ -1,0 +1,56 @@
+#Question 1 
+#Part A - Creating the data frame
+emp.data <- data.frame(
+  emp_id = c (1:5), 
+  emp_name = c("Peter", "Amy", "Ryan", "Gary", "Michelle"),
+  salary = c(623.3, 515.2, 611.0, 729.0, 843.25), 
+  
+  start_date = as.Date(c("2012-01-01", "2013-09-23", "2014-11-15", "2014-05-11",
+                         "2015-03-27")),
+  stringsAsFactors = FALSE)
+#print data frame			
+print(emp.data) 
+
+#Part B - adding the department column
+emp.data$dept <- c("IT","Finance","CS","IT","CS")
+dep<- emp.data
+print(dep)
+
+#Part C - extracting rows 1, 3, & 5 w the info in column 2 & 3
+extracted <- emp.data[c(1, 3, 5),c(2, 3)]
+print(extracted)
+
+#Part D - bar chart of salaries for 1, 4, 5 
+#setting up data for the bar chart
+salaries <- c(623.3, 729.0, 843.25)
+name <- c("Peter", "Gary", "Michelle")
+#Plot the bar chart 
+barplot(salaries,names.arg=name,xlab="Employees",ylab="Salaries",col="blue",
+        main="Employee Salaries",border="blue")
+
+#Part E - pie chart of max, min and med salary
+# 3D Exploded Pie Chart
+salaries <- c(843.25, 515.2, 623.3)
+name <- c("Michelle", "Amy", "Peter", )
+pie(salaries,labels=name,explode=0.1,
+      main="Pie Chart of Highest, Lowest, and Median Salaries")
+
+#Question 2 
+
+#Function for drawing rectangle for the american flag
+plot(c(0, 475), c(0, 250), type= "n", xlab = "Rectangle For Flag", ylab = "")
+rect(0, 0, 475, 250, density = 400, border = "black", col = "white")
+
+#Function to add stripes for flag 
+plot(c(0, 475), c(0, 250), type= "n", xlab = "Rectangle For Flag", ylab = "")
+#Different height markers for each stripe: 0, 19.2, 38.43, 57.63, 76.83, 96.03, 115.23, 134.43, 153.63, 172.83, 
+                                            #192.03, 211.23, 230.43, 249.63
+rect(0, 0, 475, 19.2, density = 400, border = "black", col = "red")
+rect(0, 38.43, 475, 57.63, density = 400, border = "black", col = "red")
+rect(0, 76.83, 475, 96.03, density = 400, border = "black", col = "red")
+rect(0, 115.23, 475, 134.43, density = 400, border = "black", col = "red")
+rect(0, 153.63, 475, 172.83, density = 400, border = "black", col = "red")
+rect(0, 192.03, 475, 211.23, density = 400, border = "black", col = "red")
+rect(0, 230.43, 475, 249.63, density = 400, border = "black", col = "red")
+#Rectangle for the navy square - height: 135.4 to 250 width: 0 to 190
+rect(0, 135.4, 190, 250, density = 400, border = "black", col = "navy")
